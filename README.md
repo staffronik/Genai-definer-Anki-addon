@@ -1,0 +1,6 @@
+Addon removes all the HTML tags, repeating, starting and trailing spaces, brings text to lowercase of all the **basic** notes' fronts from a user specified deck.<br>
+
+Addon gets user specified amount of **basic** notes from a user specified deck. Notes that have >300 characteres on their back considered already defined and are skipped without affecting the count.<br>
+Addon then sends API requests to user specified Google Genai model with user specified amount of concurrent calls with the following prompt: "Define the word or phrase: **{FRONT_OF_THE_NOTE}**. Explain how it differs from its synonyms."<br>
+The response is then written to the backs of corresponding basic notes.<br><br>
+In order for extension to work you're required to create an environment variable named GOOGLE_GENAI_API_KEY with the API key as a value. As per this point in time, you can get a free API key on Google AI Studio website. It allows you to make 14400 requests to **gemma-3n-e4b-it** (default model for this addon) per day, 30 requests per minute.
